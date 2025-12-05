@@ -801,17 +801,19 @@ footer {
 }
 
 .icon-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
+  position: relative;
+  padding-left: 1.8rem;   /* space for the icon */
   margin-bottom: 0.6rem;
 }
 
 .icon-list i {
+  position: absolute;
+  left: 0;
+  top: 3px;
   font-size: 1rem;
   color: var(--accent);
-  margin-top: 3px;
 }
+
 
 /* =====================================================
    PUBLICATIONS PAGE – CARDS, FILTERS, BIBTEX
