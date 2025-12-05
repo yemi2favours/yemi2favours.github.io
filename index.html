@@ -1,51 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
-  <title>Dr. Adeyemi Fagbade | Home</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Dr. Adeyemi Fagbade | Research Scientist & Data Scientist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="nav-container">
-    <div class="brand">
-      <div class="brand-logo">AF</div>
-      <div>
-        <div class="brand-name">ADEYEMI FAGBADE</div>
-        <div class="brand-sub">Research Scientist · Data Scientist</div>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">AF</div>
+        <div class="brand-text">
+          <div class="brand-name">ADEYEMI FAGBADE</div>
+          <div class="brand-sub">Research Scientist · Data Scientist</div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
+        <button id="navToggle" class="nav-toggle" type="button">☰</button>
+        <nav>
+          <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
+  </header>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="code.html">Code</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- HERO -->
+  <main class="main">
+    <section class="hero">
+      <div class="hero-inner fade-in">
+        <div>
+          <div class="hero-badge">DR. ADEYEMI FAGBADE</div>
+          <div class="hero-divider"></div>
+          <h1 class="hero-title">
+            <span>Research</span>
+            <span>Scientist.</span>
+            <span>Data</span>
+            <span>Scientist.</span>
+            <span>Educator.</span>
+          </h1>
+          <p class="hero-sub">
+            Applied mathematician and data scientist specializing in turbulence modeling, CFD,
+            risk analytics, and predictive modeling for gaming, finance, and engineering systems.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="Adeyemi_Fagbade_academic_Resume_new.docx">Download CV</a>
+            <!-- optional PDF: upload Adeyemi_Fagbade_CV.pdf and uncomment -->
+            <!-- <a class="btn btn-outline" href="Adeyemi_Fagbade_CV.pdf">Download CV (PDF)</a> -->
+            <a class="btn btn-outline" href="contact.html">Contact Me</a>
+          </div>
+          <div class="hero-meta">
+            CFD · Turbulence · Predictive Analytics · Risk Modeling · Teaching
+          </div>
+        </div>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1 class="hero-title">Research Scientist.<br>Data Scientist.<br>Educator.</h1>
-    <p>
-      Welcome to my academic and professional portfolio.  
-      I specialize in turbulence modeling, CFD, predictive analytics, risk modeling, and applied mathematics.
-    </p>
-  </div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame"></div>
+          <div class="hero-photo-inner">
+            <img src="Adeyemi_M8A5830.JPG" alt="Dr. Adeyemi Fagbade" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <img src="Adeyemi_M8A5830.JPG" class="hero-photo" alt="Adeyemi Fagbade">
-</section>
+    <!-- HIGHLIGHTS -->
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header fade-in">
+          <div class="section-kicker">Snapshot</div>
+          <h2 class="section-title">Where mathematics, data, and industry meet</h2>
+          <p class="section-sub">
+            I design and deploy models that connect mathematical rigor with real business impact,
+            from high-fidelity simulations of turbulent flows to revenue and risk analytics in gaming and finance.
+          </p>
+        </div>
 
-<footer>
-  © <script>document.write(new Date().getFullYear())</script> Dr. Adeyemi Fagbade
-</footer>
+        <div class="grid-2">
+          <div class="card fade-in">
+            <h3>Research Scientist</h3>
+            <p class="muted">
+              PhD in Applied Mathematics (minor in Statistics), focusing on hybrid RANS–LES,
+              Continuous Eddy Simulation (CES), and high-performance CFD.
+            </p>
+            <ul class="list">
+              <li>Turbulent boundary layers & wall-bounded flows</li>
+              <li>Mode-controlled simulation & minimal error methods</li>
+              <li>MHD & Casson fluids, spectral methods</li>
+            </ul>
+          </div>
 
+          <div class="card fade-in">
+            <h3>Industry Data Scientist</h3>
+            <p class="muted">
+              7+ years in data science, risk analytics, and predictive modeling across gaming, insurance,
+              banking, and higher education.
+            </p>
+            <ul class="list">
+              <li>Revenue forecasting & stress testing</li>
+              <li>Credit risk & portfolio modeling</li>
+              <li>Marketing mix modeling & player analytics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER + BACK TO TOP -->
+  <footer>
+    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+  </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
