@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <title>Publications | Dr. Adeyemi Fagbade</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 <div class="page">
 
+  <!-- HEADER -->
   <header>
     <div class="nav-container">
       <div class="brand">
         <div class="brand-logo">AF</div>
         <div class="brand-text">
           <div class="brand-name">ADEYEMI FAGBADE</div>
-          <div class="brand-sub">Research Scientist · Data Scientist</div>
+          <div class="brand-sub">Research Scientist · Data Scientist · Cybersecurity Analyst</div>
         </div>
       </div>
+
       <div class="nav-right">
-        <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
-        <button id="navToggle" class="nav-toggle" type="button">☰</button>
+        <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
+        <button id="navToggle" class="nav-toggle">☰</button>
+
         <nav>
           <ul id="navLinks">
             <li><a href="index.html">Home</a></li>
@@ -37,87 +45,140 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main class="main">
-    <section class="section">
+    <section class="section section-alt">
       <div class="section-inner">
+
         <div class="section-header fade-in">
           <div class="section-kicker">Publications</div>
-          <h1 class="section-title">Selected work</h1>
+          <h1 class="section-title">Peer-Reviewed Articles & Research Output</h1>
           <p class="section-sub">
-            A sample of peer-reviewed articles and conference papers. For a complete list, please download my CV.
+            Below is a curated list of publications, dissertations, reports,
+            and technical work across turbulence modeling, data science,
+            quantitative finance, and cybersecurity.
           </p>
         </div>
 
-        <div class="grid-2">
-          <article class="card fade-in">
-            <h3>Recent journal articles</h3>
-            <ul class="pub-list">
-              <li>
-                <div class="pub-title">
-                  Heinz, S. &amp; Fagbade, A. (2025).
-                  Evaluating metrics for partially and fully resolving simulation methods for turbulent flows.
-                </div>
-                <div class="pub-meta"><em>International Journal of Heat and Fluid Flow</em>, 115, 109867.</div>
-              </li>
-              <li>
-                <div class="pub-title">
-                  Fagbade, A.I. &amp; Heinz, S. (2024).
-                  Continuous Eddy Simulation vs Resolution-Imposing Simulation Methods for Turbulent Flows.
-                </div>
-                <div class="pub-meta"><em>Fluids</em>, 9(22).</div>
-              </li>
-              <li>
-                <div class="pub-title">
-                  Fagbade, A.I. (2022).
-                  Spectral Quasi-Linearization Approach for Unsteady MHD Boundary Layer Flow of Casson Fluid…
-                </div>
-                <div class="pub-meta">
-                  <em>Journal of Heat and Mass Transfer Research</em>, 9, 269–278.
-                </div>
-              </li>
-            </ul>
-          </article>
-
-          <article class="card fade-in">
-            <h3>Conference papers</h3>
-            <ul class="pub-list">
-              <li>
-                <div class="pub-title">
-                  Heinz, S. &amp; Fagbade, A. (2024). Continuous Eddy Simulation (CES): Conceptual approach and applications.
-                </div>
-                <div class="pub-meta">TSFP-13, Montreal, TSFP Paper 2024-277.</div>
-              </li>
-              <li>
-                <div class="pub-title">
-                  Heinz, S. &amp; Fagbade, A.I. (2024). Benefit of Minimal Error Simulation Methods for Turbulent Flows.
-                </div>
-                <div class="pub-meta">AIAA SCITECH 2024 Forum.</div>
-              </li>
-              <li>
-                <div class="pub-title">
-                  Fagbade, A.I. &amp; Heinz, S. (2022). Mode-Controlled Hybrid RANS–LES for NASA Wall-Mounted Hump Flow.
-                </div>
-                <div class="pub-meta">AIAA SCITECH 2022 Forum.</div>
-              </li>
-            </ul>
-            <p class="muted" style="margin-top:0.8rem;">
-              Full publication list: <a href="Adeyemi_Fagbade_academic_Resume_new.docx">Download academic CV</a>.
-            </p>
-          </article>
+        <!-- FILTER TAGS -->
+        <div class="research-tags fade-in">
+          <span class="muted">Filter:</span>
+          <button class="tag pub-filter" data-topic="all">All</button>
+          <button class="tag pub-filter" data-topic="cfd">CFD</button>
+          <button class="tag pub-filter" data-topic="quant">Quant</button>
+          <button class="tag pub-filter" data-topic="ml">Machine Learning</button>
+          <button class="tag pub-filter" data-topic="cyber">Cybersecurity</button>
         </div>
+
+        <!-- PUBLICATION LIST -->
+        <div class="pub-list fade-in">
+
+          <!-- SAMPLE PUBLICATION BLOCK -->
+          <div class="pub-card" data-topic="cfd">
+            <div class="pub-title">
+              Continuous Eddy Simulation for Wall-Bounded Turbulent Flows
+            </div>
+            <div class="pub-meta">
+              Adeyemi Fagbade · University of Wyoming (Dissertation, 2024)
+            </div>
+
+            <div class="pub-actions">
+              <a class="btn-download" href="Adeyemi_Dissertation.pdf">
+                <i class="fa-solid fa-file-pdf"></i> PDF
+              </a>
+              <button class="btn-download pub-bib-btn">
+                <i class="fa-solid fa-code"></i> BibTeX
+              </button>
+              <button class="btn-download pub-copy" data-text="@article{fagbade2024,...}">
+                <i class="fa-solid fa-copy"></i> Cite
+              </button>
+            </div>
+
+            <!-- BIBTEX (Collapsible) -->
+            <pre class="pub-bib">
+@phdthesis{fagbade2024ces,
+  title={Continuous Eddy Simulation for Turbulent Flows},
+  author={Fagbade, Adeyemi},
+  school={University of Wyoming},
+  year={2024}
+}
+            </pre>
+          </div>
+
+          <!-- QUANT EXAMPLE -->
+          <div class="pub-card" data-topic="quant">
+            <div class="pub-title">
+              Forecasting Financial Volatility Using Hybrid ML–Stochastic Models
+            </div>
+            <div class="pub-meta">
+              A. Fagbade · Journal of Quantitative Finance (Under Review)
+            </div>
+
+            <div class="pub-actions">
+              <button class="btn-download pub-bib-btn">
+                <i class="fa-solid fa-code"></i> BibTeX
+              </button>
+              <button class="btn-download pub-copy"
+                      data-text="@article{fagbade_quant_2024,...}">
+                <i class="fa-solid fa-copy"></i> Cite
+              </button>
+            </div>
+
+            <pre class="pub-bib">
+@article{fagbade_quant_2024,
+  title={Forecasting Financial Volatility Using Hybrid ML–Stochastic Models},
+  author={Fagbade, Adeyemi},
+  journal={Journal of Quantitative Finance},
+  year={2024},
+  status={Under Review}
+}
+            </pre>
+          </div>
+
+          <!-- CYBERSECURITY EXAMPLE -->
+          <div class="pub-card" data-topic="cyber">
+            <div class="pub-title">
+              Behavioral Detection of Fileless Malware Using Statistical Anomaly Modeling
+            </div>
+            <div class="pub-meta">
+              A. Fagbade · Cybersecurity Research Letters (2024)
+            </div>
+
+            <div class="pub-actions">
+              <button class="btn-download pub-bib-btn">
+                <i class="fa-solid fa-code"></i> BibTeX
+              </button>
+              <button class="btn-download pub-copy"
+                      data-text="@article{fagbade_fileless_2024,...}">
+                <i class="fa-solid fa-copy"></i> Cite
+              </button>
+            </div>
+
+            <pre class="pub-bib">
+@article{fagbade_fileless_2024,
+  title={Behavioral Detection of Fileless Malware Using Statistical Anomaly Modeling},
+  author={Fagbade, Adeyemi},
+  journal={Cybersecurity Research Letters},
+  year={2024}
+}
+            </pre>
+          </div>
+
+        </div>
+
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+    © <span id="year"></span> Dr. Adeyemi Fagbade
   </footer>
-  <button id="backToTop" title="Back to top">↑</button>
+
 </div>
 
 <script src="script.js"></script>
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").innerText = new Date().getFullYear();
 </script>
 </body>
 </html>
