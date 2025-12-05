@@ -1,50 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8" />
   <title>Teaching | Dr. Adeyemi Fagbade</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="nav-container">
-    <div class="brand"><div class="brand-logo">AF</div>
-      <div><div class="brand-name">ADEYEMI FAGBADE</div><div class="brand-sub">Research Scientist · Data Scientist</div></div>
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">AF</div>
+        <div class="brand-text">
+          <div class="brand-name">ADEYEMI FAGBADE</div>
+          <div class="brand-sub">Research Scientist · Data Scientist</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
+        <button id="navToggle" class="nav-toggle" type="button">☰</button>
+        <nav>
+          <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="code.html">Code</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul></nav>
-  </div>
-</header>
+  </header>
 
-<section class="section">
-<h2 class="section-title">Teaching & Mentoring</h2>
+  <main class="main">
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-header fade-in">
+          <div class="section-kicker">Teaching</div>
+          <h1 class="section-title">Teaching & mentoring</h1>
+          <p class="section-sub">
+            I enjoy helping students see mathematics as a language for understanding the world and solving practical problems.
+          </p>
+        </div>
 
-<h3>Teaching Philosophy</h3>
-<p>I make abstract concepts intuitive through problem-solving, visualization, and real-world applications.</p>
+        <div class="grid-2">
+          <article class="card fade-in">
+            <h3>Teaching philosophy</h3>
+            <p>
+              I emphasize conceptual understanding, structured problem-solving, and real-world context.
+              My classes blend analytical rigor with intuition, visuals, and computational tools.
+            </p>
+            <p class="muted">
+              I have taught courses ranging from introductory business mathematics to engineering mathematics,
+              probability, and data-centric subjects at polytechnic and university levels.
+            </p>
+          </article>
 
-<h3>Courses Taught</h3>
-<ul>
-  <li>Calculus & Linear Algebra</li>
-  <li>Engineering Mathematics</li>
-  <li>Discrete Mathematics</li>
-  <li>Business Mathematics</li>
-  <li>Probability & Statistics</li>
-  <li>Intro to Data Science (Python)</li>
-</ul>
+          <article class="card fade-in">
+            <h3>Courses & topics</h3>
+            <ul class="list">
+              <li>Calculus & Linear Algebra</li>
+              <li>Engineering Mathematics</li>
+              <li>Discrete & Business Mathematics</li>
+              <li>Probability & Statistics</li>
+              <li>Big Data Analytics & Databases</li>
+              <li>Introductory Data Science with Python</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</section>
+  <footer>
+    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+  </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+</div>
 
-<footer>
-  © <script>document.write(new Date().getFullYear())</script> Dr. Adeyemi Fagbade
-</footer>
-
+<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
