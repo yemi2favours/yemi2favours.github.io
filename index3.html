@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fair Crown Consulting Ltd (FCC) | Research, Data & Cybersecurity Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Fair Crown Consulting Ltd (FCC) - research-driven consulting in financial risk management, cybersecurity-forensic analysis, data science, CFD, and applied statistics based in Saskatoon, Canada.">
+  <style>
+    :root {
+      --bg-dark: #050814;
+      --bg-light: #f5f5f7;
+      --accent-gold: #c9a94a;
+      --accent-gold-soft: #e4d29a;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-soft: #e5e7eb;
+      --card-bg: #ffffff;
+      --link: #1d4ed8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50% 50% 45% 45%;
+      background: radial-gradient(circle at 50% 0%, var(--accent-gold) 0, var(--accent-gold-soft) 40%, var(--bg-dark) 70%);
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    }
+
+    .logo-icon::before {
+      /* simple crown silhouette */
+      content: "";
+      position: absolute;
+      bottom: 55%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 40%;
+      clip-path: polygon(0% 100%, 15% 30%, 35% 75%, 50% 15%, 65% 75%, 85% 30%, 100% 100%);
+      background: #fdf7d8;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.45rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background-color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      padding: 3.5rem 1.5rem 2rem;
+    }
+
+    .hero-left h1 {
+      font-size: clamp(2.3rem, 3vw, 2.7rem);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: #fefce8;
+      border: 1px solid #facc15;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background-color: #eff6ff;
+      border: 1px solid #dbeafe;
+      white-space: nowrap;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--bg-dark), #1f2937);
+      color: #f9fafb;
+      border-color: #000;
+    }
+
+    .btn-primary:hover {
+      background: #020617;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: #d1d5db;
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background-color: #f3f4f6;
+      text-decoration: none;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #111827 100%);
+      color: #e5e7eb;
+      border-radius: 1.5rem;
+      padding: 1.4rem 1.4rem 1.6rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
+    }
+
+    .hero-right::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(233, 213, 255, 0.16), transparent 55%),
+                  radial-gradient(circle at 90% 0%, rgba(254, 249, 195, 0.18), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-panel-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+
+    .hero-panel-chip {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.2);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 0.9rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      font-size: 0.78rem;
+    }
+
+    .hero-card h3 {
+      font-size: 0.82rem;
+      margin-bottom: 0.25rem;
+      color: #e5e7eb;
+    }
+
+    .hero-card p {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .hero-card span {
+      display: inline-block;
+      margin-top: 0.3rem;
+      font-size: 0.72rem;
+      color: var(--accent-gold-soft);
+    }
+
+    .hero-footer {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-footer strong {
+      color: #e5e7eb;
+    }
+
+    /* Sections */
+
+    main {
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+      gap: 2rem;
+    }
+
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border-soft);
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card small {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card ul {
+      padding-left: 1.1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .card ul li + li {
+      margin-top: 0.2rem;
+    }
+
+    /* Lists */
+
+    .bullet-list {
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    .bullet-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    .inline-label {
+      font-size: 0.78rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 999px;
+      background-color: #eef2ff;
+      border: 1px solid #e0e7ff;
+      margin-right: 0.3rem;
+      white-space: nowrap;
+    }
+
+    /* Publications */
+
+    .pub-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .pub-list li + li {
+      margin-top: 0.6rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--border-soft);
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
+      gap: 2rem;
+    }
+
+    .contact-detail {
+      font-size: 0.9rem;
+    }
+
+    .contact-detail div + div {
+      margin-top: 0.5rem;
+    }
+
+    form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.9rem;
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1rem 1.5rem 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2.5rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .two-col,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+        font-size: 1.4rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.15rem 0.3rem;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 1.5rem;
+        background: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+        padding: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav page">
+    <div class="brand">
+      <div class="logo-icon" aria-hidden="true"></div>
+      <div>
+        <div class="logo-text-main">Fair Crown Consulting Ltd</div>
+        <div class="logo-text-sub">Data · Cybersecurity · Research · Saskatoon</div>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="
+        const links = document.getElementById('nav-links');
+        links.classList.toggle('mobile-open');
+      ">☰</button>
+      <div id="nav-links" class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#services">Services</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <section class="hero" id="top">
+    <div class="hero-left">
+      <div class="hero-highlight">
+        <span>FCC · Crown on the Horizon</span>
+        <span>Research-driven consulting</span>
+      </div>
+      <h1>Fair Crown Consulting Ltd (FCC)</h1>
+      <p class="hero-tagline">
+        Research Scientist &amp; Data Analyst-led consulting firm based in Saskatoon, Canada.
+        We combine advanced analytics, cybersecurity-forensics, and applied mathematics to turn complex data into
+        secure, actionable decisions.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">Financial Risk Management</span>
+        <span class="badge">Cybersecurity &amp; Forensic Analysis</span>
+        <span class="badge">Survival Analysis &amp; Predictive Modeling</span>
+        <span class="badge">Computational Fluid Dynamics (CFD)</span>
+        <span class="badge">Business Insights &amp; Optimization</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Request a consultation →</a>
+        <a href="#research" class="btn btn-outline">View research profile</a>
+      </div>
+      <div class="hero-meta">
+        <strong>Core values:</strong> rigor · transparency · security · impact.
+      </div>
+    </div>
+
+    <aside class="hero-right" aria-label="Snapshot of core expertise">
+      <div class="hero-panel-header">
+        <div class="hero-panel-title">Analytical Horizon</div>
+        <div class="hero-panel-chip">FCC · Saskatoon, SK</div>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h3>Risk &amp; Finance</h3>
+          <p>Quantitative models for capital adequacy, loss prediction, and stress testing under uncertainty.</p>
+          <span>Tools: time series · credit risk · Monte Carlo</span>
+        </div>
+        <div class="hero-card">
+          <h3>Cyber-Forensic Analytics</h3>
+          <p>Malware, log, and anomaly analysis to support incident response and strengthen cyber resilience.</p>
+          <span>Focus: threat detection · attribution</span>
+        </div>
+        <div class="hero-card">
+          <h3>Applied Statistics</h3>
+          <p>Survival analysis, generalized linear models, and optimization for data-driven decisions.</p>
+          <span>Domains: health, finance, operations</span>
+        </div>
+        <div class="hero-card">
+          <h3>CFD &amp; Modeling</h3>
+          <p>Computational fluid dynamics and numerical methods for engineering and industrial processes.</p>
+          <span>Methods: PDEs · numerical solvers</span>
+        </div>
+      </div>
+      <div class="hero-footer">
+        Bridging <strong>academic research</strong> and <strong>industry consulting</strong> from Saskatoon to global clients.
+      </div>
+    </aside>
+  </section>
+</div>
+
+<main class="page">
+  <!-- About & Academic Profile -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-kicker">About</div>
+      <h2 class="section-title">Research-driven consulting, grounded in data and mathematics</h2>
+      <p class="section-subtitle">
+        Fair Crown Consulting Ltd is led by a Research Scientist and Data Analyst with a strong background in applied
+        mathematics, statistics, and computational modeling.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>Biography</h3>
+        <p style="margin-bottom: 0.6rem;">
+          [Your Name] is a Research Scientist and Data Analyst with expertise spanning applied mathematics,
+          statistics, data science, and cybersecurity. [He/She/They] specializes in building rigorous, interpretable
+          models that connect complex data to practical decisions in finance, cybersecurity, engineering, and business.
+        </p>
+        <p style="margin-bottom: 0.6rem;">
+          Through Fair Crown Consulting Ltd (FCC), [Your Name] helps organizations design robust analytical pipelines,
+          quantify risk, and uncover insights from high-dimensional and noisy data, with a strong emphasis on model
+          validation, reproducibility, and security.
+        </p>
+        <p>
+          FCC’s approach combines academic rigor with real-world constraints — ensuring that models are not only
+          theoretically sound, but also operationally feasible and aligned with business objectives.
+        </p>
+      </div>
+
+      <div>
+        <h3>Academic Profile</h3>
+        <ul class="bullet-list">
+          <li><strong>Highest degree:</strong> [Your Degree, e.g., PhD in Applied Mathematics / Statistics / Engineering]</li>
+          <li><strong>Institution:</strong> [Your University / Research Institution]</li>
+          <li><strong>Current / recent affiliation:</strong> [Department / Lab / Research Center, if applicable]</li>
+          <li><strong>Research roles:</strong> [e.g., Research Scientist, Postdoctoral Fellow, Data Scientist, Lecturer]</li>
+          <li><strong>Teaching / supervision:</strong> [Brief note on teaching, supervision, or mentoring, if applicable]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Expertise -->
+  <section id="research">
+    <div class="section-header">
+      <div class="section-kicker">Research &amp; Expertise</div>
+      <h2 class="section-title">Core research interests and technical domains</h2>
+      <p class="section-subtitle">
+        FCC sits at the intersection of data science, cybersecurity, applied mathematics, and computational modeling.
+      </p>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h3>Research Interests</h3>
+        <ul class="bullet-list">
+          <li>Survival analysis and event-time modeling (hazard models, competing risks, censored data).</li>
+          <li>Predictive modeling and optimization for finance, operations, and engineering systems.</li>
+          <li>Cybersecurity-forensic analytics and malware analysis using statistical and machine learning methods.</li>
+          <li>Computational fluid dynamics (CFD) and numerical solutions to partial differential equations.</li>
+          <li>Statistical modeling and inference for high-dimensional and complex datasets.</li>
+          <li>Data engineering, data quality assurance, and model lifecycle management.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Technical Skills &amp; Tooling</h3>
+        <p style="margin-bottom: 0.5rem;">Example technical competencies (customize as needed):</p>
+        <div style="margin-bottom: 0.4rem;">
+          <span class="inline-label">Python / R / MATLAB</span>
+          <span class="inline-label">SQL &amp; Databases</span>
+          <span class="inline-label">Machine Learning</span>
+        </div>
+        <div style="margin-bottom: 0.4rem;">
+          <span class="inline-label">Survival Analysis</span>
+          <span class="inline-label">Bayesian Methods</span>
+          <span class="inline-label">Time Series</span>
+        </div>
+        <div style="margin-bottom: 0.4rem;">
+          <span class="inline-label">CFD &amp; Numerical Methods</span>
+          <span class="inline-label">Simulation &amp; Optimization</span>
+        </div>
+        <div style="margin-bottom: 0.4rem;">
+          <span class="inline-label">ETL &amp; Data Pipelines</span>
+          <span class="inline-label">Data Quality &amp; Validation</span>
+          <span class="inline-label">Reporting &amp; Dashboards</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="section-header">
+      <div class="section-kicker">Services</div>
+      <h2 class="section-title">Consulting services offered by Fair Crown Consulting Ltd</h2>
+      <p class="section-subtitle">
+        FCC provides research-grade analytics and consulting with a focus on financial risk, cybersecurity-forensics,
+        CFD, and applied statistics.
+      </p>
+    </div>
+
+    <div class="card-list">
+      <article class="card">
+        <h3>Financial Risk Management</h3>
+        <small>Quantitative risk modeling for financial institutions and businesses</small>
+        <p>
+          Design and validation of models for credit risk, market risk, and operational risk, with a focus on
+          transparency and regulatory alignment.
+        </p>
+        <ul>
+          <li>Loss prediction, PD/LGD/EAD modeling and scenario analysis.</li>
+          <li>Stress testing and sensitivity analysis under uncertainty.</li>
+          <li>Portfolio analytics and capital allocation strategies.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Cybersecurity &amp; Forensic / Malware Analysis</h3>
+        <small>Data-driven detection, investigation, and hardening</small>
+        <p>
+          Support for incident response and cyber risk assessment through rigorous analysis of logs, network traces,
+          and malware behavior.
+        </p>
+        <ul>
+          <li>Anomaly detection and threat modeling.</li>
+          <li>Forensic analysis of security events and malware artifacts.</li>
+          <li>Metrics, dashboards, and quantitative cyber-risk scoring.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Data Research, Predictive Analytics &amp; Modeling</h3>
+        <small>From raw data to insight and decision support</small>
+        <p>
+          Development of bespoke predictive models and analytical pipelines tailored to your data and business needs.
+        </p>
+        <ul>
+          <li>End-to-end modeling workflows (cleaning, feature engineering, validation).</li>
+          <li>Classification, regression, forecasting, and segmentation.</li>
+          <li>Model explainability and communication for stakeholders.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Computational Fluid Dynamics (CFD) Research</h3>
+        <small>Simulation and analysis of fluid flows and transport phenomena</small>
+        <p>
+          Application of CFD and numerical methods to engineering, industrial, and environmental problems.
+        </p>
+        <ul>
+          <li>Model formulation and validation for complex geometries.</li>
+          <li>Parameter studies and optimization of operating conditions.</li>
+          <li>Translation of simulation results into business or design recommendations.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Applied Mathematics &amp; Statistics</h3>
+        <small>Survival analysis, optimization, and uncertainty quantification</small>
+        <p>
+          Advanced statistical and mathematical modeling for time-to-event data, reliability, and decision-making
+          under uncertainty.
+        </p>
+        <ul>
+          <li>Survival and reliability modeling (censored data, competing risks).</li>
+          <li>Optimization and decision analysis for complex systems.</li>
+          <li>Design and analysis of experiments and studies.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Business Insights, Data Engineering &amp; Quality Assurance</h3>
+        <small>Making data reliable, usable, and valuable</small>
+        <p>
+          Ensuring that data and models are robust, well-documented, and integrated into business processes.
+        </p>
+        <ul>
+          <li>Data pipeline design (ingestion, transformation, validation).</li>
+          <li>Data quality frameworks and governance support.</li>
+          <li>Analytical dashboards and reporting for executives and teams.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications">
+    <div class="section-header">
+      <div class="section-kicker">Publications</div>
+      <h2 class="section-title">Selected academic publications &amp; technical reports</h2>
+      <p class="section-subtitle">
+        A sample of peer-reviewed articles, conference papers, and technical reports. Replace the entries below with
+        your actual publications.
+      </p>
+    </div>
+
+    <ul class="pub-list">
+      <li>
+        <div class="pub-title">[Paper Title 1]</div>
+        <div class="pub-meta">[Your Name], [Co-authors], <em>[Journal / Conference Name]</em>, [Year].</div>
+        <div class="pub-meta">Keywords: survival analysis, predictive modeling, risk.</div>
+      </li>
+      <li>
+        <div class="pub-title">[Paper Title 2]</div>
+        <div class="pub-meta">[Your Name], [Co-authors], <em>[Journal / Conference Name]</em>, [Year].</div>
+        <div class="pub-meta">Keywords: cybersecurity, malware analysis, anomaly detection.</div>
+      </li>
+      <li>
+        <div class="pub-title">[Paper Title 3]</div>
+        <div class="pub-meta">[Your Name], [Co-authors], <em>[Journal / Conference Name]</em>, [Year].</div>
+        <div class="pub-meta">Keywords: CFD, numerical methods, applied mathematics.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Projects / Case Studies (optional section) -->
+  <section id="projects">
+    <div class="section-header">
+      <div class="section-kicker">Projects</div>
+      <h2 class="section-title">Illustrative projects &amp; case studies</h2>
+      <p class="section-subtitle">
+        Brief, anonymized examples of how FCC has applied research and analytics to real-world problems.
+      </p>
+    </div>
+
+    <div class="card-list">
+      <article class="card">
+        <h3>Stress-testing credit portfolio risk</h3>
+        <p>
+          Built a predictive risk framework for a financial institution to assess portfolio performance under macroeconomic stress scenarios.
+        </p>
+        <ul>
+          <li>Designed time-to-default models with survival analysis.</li>
+          <li>Implemented scenario-based simulations for regulatory reporting.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Forensic analysis of a security incident</h3>
+        <p>
+          Supported an organization after a cyber incident by correlating log data, network traces, and malware behavior to reconstruct the attack path.
+        </p>
+        <ul>
+          <li>Identified key indicators of compromise and attack vectors.</li>
+          <li>Provided quantitative risk metrics to guide remediation priorities.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>CFD-driven process optimization</h3>
+        <p>
+          Applied computational fluid dynamics to optimize an industrial process, improving efficiency and reducing failure risk.
+        </p>
+        <ul>
+          <li>Developed and validated CFD models for the system.</li>
+          <li>Recommended operational changes based on simulation results.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact & Location -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-kicker">Contact</div>
+      <h2 class="section-title">Work with Fair Crown Consulting Ltd</h2>
+      <p class="section-subtitle">
+        Based in Saskatoon, Saskatchewan, Canada, FCC works with clients locally and internationally.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-detail">
+        <div><strong>Location:</strong> Saskatoon, SK, Canada</div>
+        <div><strong>Email:</strong> <a href="mailto:[your.email@example.com]">[your.email@example.com]</a></div>
+        <div><strong>Phone:</strong> [+1 (XXX) XXX-XXXX]</div>
+        <div><strong>Company:</strong> Fair Crown Consulting Ltd (FCC)</div>
+        <div style="margin-top: 0.6rem;">
+          For inquiries about financial risk management, cybersecurity-forensic analysis, CFD research, applied
+          statistics or data engineering and quality assurance, please get in touch with a brief description of your
+          project and timelines.
+        </div>
+      </div>
+
+      <div>
+        <form onsubmit="event.preventDefault(); alert('This is a front-end demo form. Connect it to a backend or email service to receive messages.');">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="org">Organization</label>
+            <input id="org" type="text" name="organization" placeholder="Organization (optional)">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div>
+            <label for="topic">Service of interest</label>
+            <input id="topic" type="text" name="topic" placeholder="e.g. Financial Risk, Cybersecurity, CFD, etc.">
+          </div>
+          <div>
+            <label for="message">Project description</label>
+            <textarea id="message" name="message" placeholder="Briefly describe your project, challenges, and goals."></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary">Send inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Fair Crown Consulting Ltd · Saskatoon, SK, Canada · FCC
+</footer>
+
+<script>
+  // update year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

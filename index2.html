@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Adeyemi Fagbade | Research Scientist & Data Scientist</title>
+  <meta name="description" content="Dr. Adeyemi Fagbade – Research Scientist, Data Scientist & Applied Mathematician. Expertise in CFD, turbulence modeling, predictive analytics, risk modeling, and teaching mathematics and statistics." />
+
+  <style>
+    :root {
+      --bg-page: #eaf2ff;
+      --bg-header: #044f9a;
+      --bg-hero-left: #edf4ff;
+      --bg-hero-right: #d8e7ff;
+      --bg-section: #ffffff;
+      --bg-section-alt: #f5f7ff;
+      --text-main: #102a43;
+      --text-muted: #627d98;
+      --text-light: #ffffff;
+      --accent: #ff7a1a;
+      --accent-soft: rgba(255, 122, 26, 0.15);
+      --max-width: 1120px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER / NAV */
+
+    header {
+      background: var(--bg-header);
+      color: var(--text-light);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.75rem;
+      color: #d1e2ff;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 0.15rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(120deg, var(--bg-hero-left), var(--bg-hero-right));
+      color: var(--text-main);
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 3.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-left {
+      padding-right: 1rem;
+    }
+
+    .hero-name {
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-big {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.1;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin: 0 0 1.5rem;
+      color: var(--text-main);
+    }
+
+    .hero-big span {
+      display: block;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      max-width: 28rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn-main,
+    .btn-ghost {
+      font-size: 0.8rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .btn-main {
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+    }
+
+    .btn-main:hover {
+      filter: brightness(1.05);
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      background: var(--accent-soft);
+      text-decoration: none;
+    }
+
+    .hero-meta {
+      margin-top: 1.6rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #829ab1;
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-wrap {
+      width: min(360px, 100%);
+      background: transparent;
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-photo-wrap::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: -18px;
+      right: 18px;
+      bottom: -18px;
+      border: 2px solid var(--accent);
+      z-index: 0;
+    }
+
+    .hero-photo-inner {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.3);
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      padding: 3rem 1.5rem;
+      background: var(--bg-section);
+    }
+
+    .section-alt {
+      background: var(--bg-section-alt);
+    }
+
+    .section.dark {
+      background: #dde9ff;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #486581;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    .section-heading {
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+      color: var(--text-main);
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .split-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+      font-size: 0.9rem;
+    }
+
+    .dark .card {
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #d0d7e2;
+      background: #f7fbff;
+    }
+
+    .pub-list,
+    .bullet-list {
+      margin: 0.4rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.88rem;
+    }
+
+    .pub-title {
+      font-weight: 600;
+    }
+
+    .pub-meta {
+      font-size: 0.83rem;
+      color: #7b8794;
+    }
+
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .exp-meta {
+      font-size: 0.82rem;
+      color: #7b8794;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7b8794;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+      color: var(--text-main);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #cbd2e1;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+
+    .contact-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .btn-main.contact-btn {
+      margin-top: 0.2rem;
+    }
+
+    footer {
+      background: var(--bg-header);
+      color: #d1e2ff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2.2rem;
+      }
+
+      .hero-left {
+        order: 2;
+        padding-right: 0;
+      }
+
+      .hero-right {
+        order: 1;
+      }
+
+      .split-2,
+      .contact-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-inner {
+        padding-inline: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-logo">AF</div>
+        <div class="brand-text">
+          <div class="brand-name">ADEYEMI FAGBADE</div>
+          <div class="brand-sub">Research Scientist · Data Scientist</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Project</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+		   <li><a href="#teaching">Code</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-name">DR. ADEYEMI FAGBADE</div>
+          <div class="hero-divider"></div>
+          <h1 class="hero-big">
+            <span>RESEARCH</span>
+            <span>SCIENTIST.</span>
+            <span>DATA</span>
+            <span>SCIENTIST.</span>
+            <span>EDUCATOR.</span>
+          </h1>
+          <p class="hero-tagline">
+            Versatile mathematical scientist with expertise in CFD, turbulence modeling, and data science.
+            I build predictive models and simulations that support risk‑aware, data‑driven decisions in
+            gaming, finance, and engineering.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn-main" href="Adeyemi_Fagbade_academic_Resume_new.docx">Download CV</a>
+            <a class="btn-ghost" href="#contact">Contact Me</a>
+          </div>
+          <div class="hero-meta">
+            CFD · Turbulence · Predictive Analytics · Risk Modeling · Teaching
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-inner">
+              <img src="Adeyemi_M8A5830.JPG" alt="Dr. Adeyemi Fagbade" class="hero-photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-alt">
+      <div class="section-inner">
+        <div class="section-title"><span>About</span> Me</div>
+        <h2 class="section-heading">Applied mathematician &amp; data scientist bridging theory and practice</h2>
+        <p class="section-sub">
+          I work at the intersection of <strong>applied mathematics</strong>, <strong>statistical learning</strong>,
+          and <strong>industry analytics</strong>, developing models that inform strategic decisions and deepen
+          our understanding of complex systems.
+        </p>
+
+        <div class="split-2">
+          <div class="card">
+            <h3>Short biography</h3>
+            <p>
+              I am a research scientist and data scientist based in Saskatoon, SK. My academic work focuses on
+              <strong>turbulent flows</strong>, <strong>hybrid RANS–LES methods</strong>, and
+              <strong>continuous eddy simulation (CES)</strong>, while my industry work spans
+              <strong>predictive analytics</strong>, <strong>risk modeling</strong>, and
+              <strong>business intelligence</strong> for gaming and financial services.
+            </p>
+            <p class="muted">
+              I enjoy turning complex mathematics and large‑scale simulations into clear narratives that decision‑makers
+              can act on—whether optimizing capital projects, improving marketing ROI, or designing more efficient
+              engineering systems.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Education &amp; training</h3>
+            <ul class="bullet-list">
+              <li><strong>Ph.D. in Applied Mathematics</strong>, minor in Statistics – University of Wyoming, 2024</li>
+              <li><strong>Graduate Certificate in GIS &amp; Remote Sensing</strong> – University of Wyoming, 2023</li>
+              <li><strong>M.Sc. in Applied Mathematics (Numerical Analysis)</strong> – University of Saskatchewan, 2019</li>
+              <li><strong>M.Tech. in Industrial Mathematics (Fluid Dynamics)</strong> – FUT Akure, 2014</li>
+              <li><strong>B.Tech. in Mathematical Sciences</strong> – FUT Akure, 2010</li>
+              <li><strong>National Diploma in Mechanical Engineering</strong> – Federal Polytechnic Offa, 2005</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section dark">
+      <div class="section-inner">
+        <div class="section-title"><span>Research</span> Focus</div>
+        <h2 class="section-heading">From turbulence modeling to predictive analytics</h2>
+        <p class="section-sub">
+          My research and professional interests span numerical simulation of turbulent flows, hybrid modeling
+          techniques, and data‑driven methods for risk and decision support.
+        </p>
+
+        <div class="split-2">
+          <div class="card">
+            <h3>Applied mathematics &amp; CFD</h3>
+            <p class="muted">
+              I develop and analyze high‑fidelity models for turbulent flows using CFD and hybrid
+              RANS–LES approaches, implemented in OpenFOAM and other high‑performance computing environments.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Continuous Eddy Simulation (CES)</span>
+              <span class="pill">Hybrid RANS–LES</span>
+              <span class="pill">Wall‑bounded flows</span>
+              <span class="pill">MHD &amp; Casson fluids</span>
+              <span class="pill">Mode‑controlled simulation</span>
+              <span class="pill">High‑performance computing</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Data science, risk &amp; analytics</h3>
+            <p class="muted">
+              In industry, I build models and dashboards that connect data to real outcomes, with growing interests
+              in cyber‑forensics and security analytics.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Predictive modeling</span>
+              <span class="pill">Risk &amp; portfolio analysis</span>
+              <span class="pill">Financial &amp; enrollment forecasting</span>
+              <span class="pill">Business intelligence (Power BI, Tableau)</span>
+              <span class="pill">Gaming &amp; player analytics</span>
+              <span class="pill">Cyber‑forensic and malware analytics (interest)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section section-alt">
+      <div class="section-inner">
+        <div class="section-title"><span>Selected</span> Publications</div>
+        <h2 class="section-heading">Recent work in fluids, CFD &amp; applied mathematics</h2>
+
+        <div class="split-2">
+          <div class="card">
+            <h3>Recent papers</h3>
+            <ul class="pub-list">
+              <li>
+                <div class="pub-title">
+                  Heinz, S. &amp; Fagbade, A. (2025).
+                  Evaluating metrics for partially and fully resolving simulation methods for turbulent flows.
+                </div>
+                <div class="pub-meta">
+                  <em>International Journal of Heat and Fluid Flow</em>, 115, 109867.
+                </div>
+              </li>
+              <li>
+                <div class="pub-title">
+                  Heinz, S. &amp; Fagbade, A. (2024).
+                  Continuous Eddy Simulation (CES): Conceptual approach and applications.
+                </div>
+                <div class="pub-meta">
+                  TSFP‑13, Montreal, Canada, TSFP Paper 2024‑277.
+                </div>
+              </li>
+              <li>
+                <div class="pub-title">
+                  Fagbade, A.I. &amp; Heinz, S. (2024).
+                  Continuous Eddy Simulation vs Resolution‑Imposing Simulation Methods for Turbulent Flows.
+                </div>
+                <div class="pub-meta">
+                  <em>Fluids</em>, 9(22).
+                </div>
+              </li>
+              <li>
+                <div class="pub-title">
+                  Heinz, S. &amp; Fagbade, A. (2024).
+                  Benefit of Minimal Error Simulation Methods for Turbulent Flows.
+                </div>
+                <div class="pub-meta">
+                  AIAA SCITECH 2024 Forum.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Earlier work</h3>
+            <ul class="pub-list">
+              <li>
+                <div class="pub-title">
+                  Fagbade, A.I. (2022).
+                  Spectral Quasi‑Linearization Approach for Unsteady MHD Boundary Layer Flow of Casson Fluid…
+                </div>
+                <div class="pub-meta">
+                  <em>Journal of Heat and Mass Transfer Research</em>, 9, 269–278.
+                </div>
+              </li>
+              <li>
+                <div class="pub-title">
+                  Fagbade, A.I. &amp; Heinz, S. (2022).
+                  Application of Mode‑Controlled Hybrid RANS–LES to the NASA Wall‑Mounted Hump Flow.
+                </div>
+                <div class="pub-meta">
+                  AIAA SCITECH 2022 Forum.
+                </div>
+              </li>
+              <li>
+                <div class="pub-title">
+                  Additional works (2015–2016)
+                </div>
+                <div class="pub-meta">
+                  On MHD convection, Casson fluid flows, thermal radiation, and spectral/homotopy methods, in
+                  <em>Journal of Nigerian Mathematical Society</em>, <em>Ain Shams Engineering Journal</em>, and others.
+                </div>
+              </li>
+            </ul>
+            <p class="muted" style="margin-top:0.8rem;">
+              For the full publication list, download my
+              <a href="Adeyemi_Fagbade_academic_Resume_new.docx">academic CV</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section dark">
+      <div class="section-inner">
+        <div class="section-title"><span>Professional</span> Experience</div>
+        <h2 class="section-heading">Analytics, research &amp; teaching roles</h2>
+
+        <div class="grid-cards">
+          <article class="card">
+            <h3>Research &amp; Data Analytics Lead</h3>
+            <div class="exp-meta">Saskatchewan Indian Gaming Authority · Apr 2024 – Present · Saskatoon, SK</div>
+            <ul class="bullet-list">
+              <li>Spearhead analytics roadmap for 7 casino properties; built a central SQL Server &amp; Azure Synapse asset‑performance mart.</li>
+              <li>Develop financial forecasting models (Python, SQL, Power BI) with ~95% revenue prediction accuracy.</li>
+              <li>Design asset and revenue dashboards informing &gt;$20M in capital expenditure decisions.</li>
+              <li>Author data governance policies that improved data accuracy from 82% to 97%.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Quantitative &amp; Research Analyst</h3>
+            <div class="exp-meta">University of Wyoming · Mar 2019 – Dec 2023 · Laramie, WY</div>
+            <ul class="bullet-list">
+              <li>Conducted high‑performance CFD simulations for aerodynamic and wind‑energy applications using OpenFOAM.</li>
+              <li>Developed a comprehensive high‑fidelity model for turbulent flow over wall‑bounded structures (published in <em>Fluids</em>).</li>
+              <li>Built quantitative models for derivatives pricing and market risk.</li>
+              <li>Taught and facilitated courses in engineering mathematics, linear algebra, calculus, and trigonometry.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Research Assistant</h3>
+            <div class="exp-meta">University of Saskatchewan · Sept 2016 – Mar 2019 · Saskatoon, SK</div>
+            <ul class="bullet-list">
+              <li>Collected and analyzed energy‑related data and simulation results for renewable energy projects.</li>
+              <li>Developed turbulence models for Lux vertical axis wind turbines.</li>
+              <li>Integrated Monte Carlo techniques into renewable energy optimization frameworks.</li>
+              <li>Supported teaching in engineering mathematics, big data analytics, and databases.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Lecturer &amp; Mathematics Instructor</h3>
+            <div class="exp-meta">FUT Akure &amp; Saskatchewan Polytechnic · 2012 – 2024</div>
+            <ul class="bullet-list">
+              <li>Taught business, discrete, and engineering mathematics to diverse cohorts.</li>
+              <li>Developed curricula, assessments, and e‑learning content (Moodle, Blackboard, Canvas, D2L).</li>
+              <li>Introduced teaching strategies that boosted exam scores and student engagement.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEACHING -->
+    <section id="teaching" class="section section-alt">
+      <div class="section-inner">
+        <div class="section-title"><span>Teaching</span> &amp; Mentoring</div>
+        <h2 class="section-heading">Helping students see mathematics as a powerful language</h2>
+
+        <div class="split-2">
+          <div class="card">
+            <h3>Teaching philosophy</h3>
+            <p>
+              I aim to make abstract concepts intuitive and useful by connecting them to real‑world problems in
+              engineering, finance, and data science. My classrooms emphasize problem‑solving, visual intuition,
+              and clear communication of quantitative ideas.
+            </p>
+            <p class="muted">
+              I am passionate about mentoring students from diverse backgrounds, helping them build confidence in
+              applied mathematics, statistics, and programming.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Topics taught</h3>
+            <div class="pill-row">
+              <span class="pill">Calculus &amp; linear algebra</span>
+              <span class="pill">Engineering mathematics</span>
+              <span class="pill">Discrete &amp; business mathematics</span>
+              <span class="pill">Probability &amp; statistics</span>
+              <span class="pill">Big data analytics &amp; databases</span>
+              <span class="pill">Intro data science &amp; Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section dark">
+      <div class="section-inner">
+        <div class="section-title"><span>Contact</span> &amp; Collaboration</div>
+        <h2 class="section-heading">Let’s work together</h2>
+
+        <div class="contact-row">
+          <div>
+            <p class="section-sub">
+              I welcome inquiries about research collaborations, CFD and turbulence projects, risk and predictive
+              analytics, and mathematics or data‑science teaching/mentoring.
+            </p>
+            <ul class="contact-list">
+              <li>
+                <div class="contact-label">Email</div>
+                <div><a href="mailto:yemi2favours@yahoo.co.uk">yemi2favours@yahoo.co.uk</a></div>
+              </li>
+              <li>
+                <div class="contact-label">Phone</div>
+                <div>+1 (639) 994‑3822</div>
+              </li>
+              <li>
+                <div class="contact-label">Location</div>
+                <div>Saskatoon, SK, Canada</div>
+              </li>
+              <li>
+                <div class="contact-label">LinkedIn</div>
+                <div><a href="https://www.linkedin.com/in/adeyemi-fagbade" target="_blank" rel="noopener">linkedin.com/in/adeyemi-fagbade</a></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Quick message (static)</h3>
+            <p class="muted">
+              This form is for layout only. To make it functional, connect it to a service such as Formspree,
+              Netlify Forms, or a simple email API.
+            </p>
+            <form class="contact-form">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="How can we collaborate?"></textarea>
+              </div>
+              <button type="button" class="btn-main contact-btn">Send (not active)</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
