@@ -1,49 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8" />
   <title>Projects | Dr. Adeyemi Fagbade</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="nav-container">
-    <div class="brand"><div class="brand-logo">AF</div>
-      <div><div class="brand-name">ADEYEMI FAGBADE</div><div class="brand-sub">Research Scientist · Data Scientist</div></div>
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">AF</div>
+        <div class="brand-text">
+          <div class="brand-name">ADEYEMI FAGBADE</div>
+          <div class="brand-sub">Research Scientist · Data Scientist</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
+        <button id="navToggle" class="nav-toggle" type="button">☰</button>
+        <nav>
+          <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="code.html">Code</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul></nav>
-  </div>
-</header>
+  </header>
 
-<section class="section">
-<h2 class="section-title">Selected Projects</h2>
+  <main class="main">
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header fade-in">
+          <div class="section-kicker">Projects</div>
+          <h1 class="section-title">Selected applied projects</h1>
+          <p class="section-sub">
+            A sample of data, analytics, and decision-support projects I’ve led or contributed to.
+          </p>
+        </div>
 
-<h3>Self-Service Revenue Insights Portal (2024)</h3>
-<p>Python Flask API + Tableau dashboard for Gaming KPIs.</p>
+        <div class="grid-auto">
+          <article class="card fade-in">
+            <h3>Self-Service Revenue Insights Portal</h3>
+            <p class="muted">
+              Python Flask API + BI dashboards providing GTM teams with interactive revenue, cohort, and funnel analytics
+              for gaming operations. Achieved NPS 78 from internal stakeholders.
+            </p>
+          </article>
 
-<h3>HR Dashboard</h3>
-<p>Interactive workforce analytics (Power BI + DAX).</p>
+          <article class="card fade-in">
+            <h3>HR Workforce Analytics Dashboard</h3>
+            <p class="muted">
+              Power BI solution tracking workforce composition, diversity, tenure, and attrition with drill-downs
+              by role, region, and demographic segments.
+            </p>
+          </article>
 
-<h3>Maven Market Analytics</h3>
-<p>Retail KPI reporting and forecasting.</p>
+          <article class="card fade-in">
+            <h3>Maven Market Grocery Analytics</h3>
+            <p class="muted">
+              Retail KPI dashboards for sales, profit, returns, and regional performance; incorporated forecasting to
+              support assortment and pricing strategies.
+            </p>
+          </article>
 
-<h3>Sprocket Central Marketing Project</h3>
-<p>Customer segmentation, modeling, and insights.</p>
+          <article class="card fade-in">
+            <h3>Sprocket Central Customer Insights</h3>
+            <p class="muted">
+              End-to-end analytics project involving data quality assessment, customer segmentation, and targeted
+              marketing recommendations using Excel Power Query and Power Pivot.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</section>
+  <footer>
+    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+  </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+</div>
 
-<footer>
-  © <script>document.write(new Date().getFullYear())</script> Dr. Adeyemi Fagbade
-</footer>
-
+<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
