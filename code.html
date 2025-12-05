@@ -1,49 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
+  <meta charset="UTF-8" />
   <title>Code | Dr. Adeyemi Fagbade</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="nav-container">
-    <div class="brand"><div class="brand-logo">AF</div>
-      <div><div class="brand-name">ADEYEMI FAGBADE</div><div class="brand-sub">Research Scientist · Data Scientist</div></div>
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">AF</div>
+        <div class="brand-text">
+          <div class="brand-name">ADEYEMI FAGBADE</div>
+          <div class="brand-sub">Research Scientist · Data Scientist</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
+        <button id="navToggle" class="nav-toggle" type="button">☰</button>
+        <nav>
+          <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="teaching.html">Teaching</a></li>
-      <li><a href="code.html">Code</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul></nav>
-  </div>
-</header>
+  </header>
 
-<section class="section">
-<h2 class="section-title">Code & Software</h2>
+  <main class="main">
+    <section class="section section-alt">
+      <div class="section-inner">
+        <div class="section-header fade-in">
+          <div class="section-kicker">Code</div>
+          <h1 class="section-title">Tools & technologies</h1>
+          <p class="section-sub">
+            I work across the stack from numerical simulation to statistical learning and business intelligence.
+          </p>
+        </div>
 
-<p>Below are samples of tools, languages, and frameworks I use:</p>
+        <div class="grid-auto">
+          <article class="card fade-in">
+            <h3>Languages & ML</h3>
+            <ul class="list">
+              <li>Python (NumPy, Pandas, Scikit-Learn, statsmodels, TensorFlow, Keras, PyTorch)</li>
+              <li>R (tidyverse, forecasting)</li>
+              <li>SAS, SPSS</li>
+              <li>MATLAB, C++</li>
+            </ul>
+          </article>
 
-<ul>
-  <li>Python (NumPy, Pandas, Scikit-Learn, TensorFlow, PyTorch)</li>
-  <li>R (tidyverse, forecast, caret)</li>
-  <li>SAS, SPSS</li>
-  <li>SQL (PostgreSQL, SQL Server, MySQL)</li>
-  <li>OpenFOAM (CFD)</li>
-  <li>Azure & AWS</li>
-  <li>Power BI, Tableau</li>
-</ul>
+          <article class="card fade-in">
+            <h3>Data & BI</h3>
+            <ul class="list">
+              <li>SQL Server, PostgreSQL, MySQL</li>
+              <li>Power BI, Tableau, Excel, IBM Cognos</li>
+              <li>Data modeling with ER Studio</li>
+            </ul>
+          </article>
 
-</section>
+          <article class="card fade-in">
+            <h3>CFD & Simulation</h3>
+            <ul class="list">
+              <li>OpenFOAM, ANSYS Fluent/CFX</li>
+              <li>MODFLOW, FEFLOW, ParaView</li>
+              <li>HPC workflows on clusters</li>
+            </ul>
+          </article>
 
-<footer>
-  © <script>document.write(new Date().getFullYear())</script> Dr. Adeyemi Fagbade
-</footer>
+          <article class="card fade-in">
+            <h3>Big Data & Cloud</h3>
+            <ul class="list">
+              <li>Hadoop, Spark (PySpark, Scala)</li>
+              <li>Microsoft Azure, AWS</li>
+              <li>GitHub, SVN</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+  </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
