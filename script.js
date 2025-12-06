@@ -76,7 +76,7 @@ if ("IntersectionObserver" in window && faders.length) {
 }
 
 // =====================================================
-// PREMIUM ACCORDION BEHAVIOR
+// PREMIUM ACCORDION BEHAVIOR + FADE EFFECT
 // =====================================================
 document.querySelectorAll(".accordion-header").forEach((header) => {
   header.addEventListener("click", () => {
@@ -90,8 +90,11 @@ document.querySelectorAll(".accordion-header").forEach((header) => {
 
     if (isOpen) {
       content.style.maxHeight = content.scrollHeight + "px";
+      content.style.opacity = "0";
+      setTimeout(() => (content.style.opacity = "1"), 150);
     } else {
       content.style.maxHeight = 0;
+      content.style.opacity = "0";
     }
   });
 });
@@ -105,13 +108,34 @@ document.querySelectorAll(".research-tags .tag").forEach((tag) => {
     const el = document.getElementById(targetId);
     if (!el) return;
 
-    // optional active state
     document.querySelectorAll(".research-tags .tag").forEach((t) =>
       t.classList.remove("active")
     );
     tag.classList.add("active");
 
     el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+// =====================================================
+// SCROLLSPY FOR RESEARCH TAGS
+// =====================================================
+const sections = document.querySelectorAll(".research-block");
+const spyTags = document.querySelectorAll(".research-tags .tag");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach((sec) => {
+    const top = sec.offsetTop - 120;
+    const height = sec.offsetHeight;
+    if (scrollY >= top && scrollY < top + height) {
+      current = sec.getAttribute("id");
+    }
+  });
+
+  spyTags.forEach((tag) => {
+    tag.classList.toggle("active", tag.dataset.target === current);
   });
 });
 
@@ -131,11 +155,8 @@ if (pubFilterButtons.length && pubCards.length) {
 
       pubCards.forEach((card) => {
         const cardTopic = card.getAttribute("data-topic");
-        if (topic === "all" || cardTopic === topic) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        card.style.display =
+          topic === "all" || cardTopic === topic ? "block" : "none";
       });
     });
   });
@@ -172,13 +193,29 @@ document.querySelectorAll(".pub-copy").forEach((btn) => {
             btn.innerHTML = original;
           }, 1500);
         },
-        () => {
-          alert("Could not copy citation. Please copy manually.");
-        }
+        () => alert("Could not copy citation. Please copy manually.")
       );
     } else {
-      // Fallback
-      alert("Clipboard API not available. Please copy manually.");
+      alert("Clipboard API not available.");
     }
   });
 });
+
+// =====================================================
+// ANIMATE TIMELINE VERTICAL LINE
+// =====================================================
+const timeline = document.querySelector(".timeline");
+
+if (timeline) {
+  window.addEventListener("scroll", () => {
+    const rect = timeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const visible = Math.min(
+      Math.max(windowHeight - rect.top, 0),
+      rect.height
+    );
+
+    timeline.style.setProperty("--line-visible", visible + "px");
+  });
+}
