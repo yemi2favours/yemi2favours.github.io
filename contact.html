@@ -1,1 +1,195 @@
-<!DOCTYPE html> <html lang="en" data-theme="light"> <head> <meta charset="UTF-8" /> <title>Contact | Dr. Adeyemi Fagbade</title> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <link rel="stylesheet" href="style.css" /> <!-- Font Awesome Icons --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> </head> <body> <div class="page"> <!-- HEADER --> <header> <div class="nav-container"> <div class="brand"> <div class="brand-logo">AF</div> <div class="brand-text"> <div class="brand-name">ADEYEMI FAGBADE</div> <div class="brand-sub">Research Scientist · Data Scientist · Cybersecurity Analyst</div> </div> </div> <div class="nav-right"> <button id="themeToggle" class="theme-toggle">🌙 Dark</button> <button id="navToggle" class="nav-toggle">☰</button> <nav> <ul id="navLinks"> <li><a href="index.html">Home</a></li> <li><a href="about.html">About</a></li> <li><a href="research.html">Research</a></li> <li><a href="publications.html">Publications</a></li> <li><a href="projects.html">Projects</a></li> <li><a href="teaching.html">Teaching</a></li> <li><a href="code.html">Code</a></li> <li><a href="contact.html">Contact</a></li> </ul> </nav> </div> </div> </header> <main class="main"> <section class="section section-alt"> <div class="section-inner"> <!-- HEADER --> <div class="section-header fade-in"> <div class="section-kicker">Contact</div> <h1 class="section-title">Get in Touch</h1> <p class="section-sub"> Whether you’re reaching out for collaboration, academic discussions, research inquiries, or consulting — I’d love to hear from you. </p> </div> <div class="contact-container-upgraded fade-in"> <!-- LEFT PANEL --> <div class="contact-left card contact-left-upgraded"> <h2>Let's Connect</h2> <p class="muted"> Feel free to contact me directly or send a message through the form. </p> <div class="contact-email-upgraded"> <i class="fa-solid fa-envelope"></i> <a href="mailto:yemi2favours@yahoo.co.uk">yemi2favours@yahoo.co.uk</a> </div> <div class="social-icons-upgraded"> <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a> <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/in/adeyemi-fagbade" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/yemi2favours" target="_blank"><i class="fab fa-github"></i></a> </div> </div> <!-- RIGHT PANEL --> <div class="contact-right card contact-right-upgraded"> <form id="contactForm"> <div class="form-row-upgraded"> <div> <label for="fname">First Name</label> <input id="fname" type="text" required /> </div> <div> <label for="lname">Last Name</label> <input id="lname" type="text" required /> </div> </div> <label for="email">Email *</label> <input id="email" type="email" required /> <label for="message">Message</label> <textarea id="message" required></textarea> <!-- Verification --> <div class="verify-box-upgraded"> <input type="checkbox" id="verifyCheck" required /> <label for="verifyCheck">I am not a robot</label> </div> <button type="submit" class="btn btn-primary" id="submitBtn"> Send Message </button> </form> <p id="contactStatus" class="status-message"></p> </div> </div> </div> </section> </main> <footer> © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved. </footer> <button id="backToTop" title="Back to top">↑</button> </div> <script src="script.js"></script> <script> document.getElementById("year").textContent = new Date().getFullYear(); </script> </body> </html> "
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Dr. Adeyemi Fagbade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-logo">AF</div>
+        <div class="brand-text">
+          <div class="brand-name">ADEYEMI FAGBADE</div>
+          <div class="brand-sub">Research Scientist · Data Scientist · Cybersecurity Analyst</div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
+        <button id="navToggle" class="nav-toggle">☰</button>
+
+        <nav>
+          <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT SECTION -->
+  <main class="main">
+    <section class="section section-alt">
+      <div class="section-inner">
+
+        <div class="section-header fade-in">
+          <div class="section-kicker">Contact</div>
+          <h1 class="section-title">Get in Touch</h1>
+          <p class="section-sub">
+            Whether you’re reaching out for collaboration, academic discussions, research inquiries,
+            or consulting — I’d love to hear from you.
+          </p>
+        </div>
+
+        <div class="contact-container-upgraded fade-in">
+
+          <!-- LEFT SECTION -->
+          <div class="contact-left card contact-left-upgraded">
+            <h2>Let's Connect</h2>
+            <p class="muted">
+              Feel free to contact me directly or send a message through the form.
+            </p>
+
+            <div class="contact-email-upgraded">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:yemi2favours@yahoo.co.uk">yemi2favours@yahoo.co.uk</a>
+            </div>
+
+            <div class="social-icons-upgraded">
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+              <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.linkedin.com/in/adeyemi-fagbade" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/yemi2favours" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+
+          <!-- RIGHT SECTION (FORM) -->
+          <div class="contact-right card contact-right-upgraded">
+            <form id="contactForm">
+
+              <div class="form-row-upgraded">
+                <div>
+                  <label for="fname">First Name</label>
+                  <input id="fname" type="text" required />
+                </div>
+
+                <div>
+                  <label for="lname">Last Name</label>
+                  <input id="lname" type="text" required />
+                </div>
+              </div>
+
+              <label for="email">Email *</label>
+              <input id="email" type="email" required />
+
+              <label for="message">Message</label>
+              <textarea id="message" required></textarea>
+
+              <!-- HUMAN VERIFICATION -->
+              <div class="verify-box-upgraded">
+                <input type="checkbox" id="verifyCheck" required />
+                <label for="verifyCheck">I am not a robot</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                Send Message
+              </button>
+
+            </form>
+
+            <p id="contactStatus" class="status-message"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
+  </footer>
+
+  <button id="backToTop" title="Back to top">↑</button>
+</div>
+
+<script src="script.js"></script>
+
+<!-- FIREBASE SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp }
+    from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCjUU_kenrsnRx82RUrFb0rpGvWQTF3TZc",
+    authDomain: "my-pw-project-bad3d.firebaseapp.com",
+    projectId: "my-pw-project-bad3d",
+    storageBucket: "my-pw-project-bad3d.firebasestorage.app",
+    messagingSenderId: "368967037022",
+    appId: "1:368967037022:web:282e517ec940f240ffc4cf",
+    measurementId: "G-LZ899S10W8"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  /* -------- FORM SUBMISSION -------- */
+  const form = document.getElementById("contactForm");
+  const statusBox = document.getElementById("contactStatus");
+  const submitBtn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        fname: document.getElementById("fname").value,
+        lname: document.getElementById("lname").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+        timestamp: serverTimestamp()
+      });
+
+      statusBox.textContent = "Message sent successfully! Thank you.";
+      statusBox.style.color = "green";
+      form.reset();
+
+    } catch (error) {
+      statusBox.textContent = "Error sending message. Please try again.";
+      statusBox.style.color = "red";
+      console.error(error);
+
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send Message";
+    }
+  });
+</script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
