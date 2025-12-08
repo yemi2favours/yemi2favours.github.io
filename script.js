@@ -257,5 +257,47 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+// ================= FIREBASE CONTACT FORM =================
+if (document.getElementById("contactForm")) {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("contactStatus");
+  const submitBtn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!document.getElementById("verifyCheck").checked) {
+      status.textContent = "Please verify that you are not a robot.";
+      status.style.color = "red";
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const messageData = {
+      fname: document.getElementById("fname").value,
+      lname: document.getElementById("lname").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+      time: new Date()
+    };
+
+    try {
+      await addDoc(collection(window.db, "contactMessages"), messageData);
+
+      status.textContent = "Your message has been sent successfully!";
+      status.style.color = "green";
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      status.textContent = "Error sending message. Try again later.";
+      status.style.color = "red";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Message";
+  });
+}
 
 
