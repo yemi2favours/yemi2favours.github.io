@@ -46,80 +46,83 @@
   </header>
 
 
-  <main class="main">
-    <section class="section section-alt">
-      <div class="section-inner">
+ <main class="main">
+  <section class="section section-alt">
+    <div class="section-inner">
 
-        <!-- HEADER -->
-        <div class="section-header fade-in">
-          <div class="section-kicker">Contact</div>
-          <h1 class="section-title">Get in Touch</h1>
-          <p class="section-sub">
-            I welcome collaborations, research discussions, consulting requests, and academic opportunities.
-          </p>
-        </div>
-
-        <div class="contact-container fade-in">
-
-          <!-- LEFT PANEL -->
-          <div class="contact-left card">
-            <h2>I'd like to hear from you!</h2>
-            <p class="muted">
-              If you have any inquiries or just want to say hi, use the form or email me directly.
-            </p>
-
-            <div class="contact-email">
-              <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:yemi2favours@yahoo.co.uk">yemi2favours@yahoo.co.uk</a>
-            </div>
-
-            <!-- SOCIAL ICON ROW -->
-            <div class="social-icons">
-              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-              <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.linkedin.com/in/adeyemi-fagbade" target="_blank"><i class="fab fa-linkedin"></i></a>
-              <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-          </div>
-
-          <!-- RIGHT PANEL (FORM) -->
-          <div class="contact-right card">
-            <form class="contact-form" id="contactForm">
-
-              <div class="form-row">
-                <div>
-                  <label for="fname">First Name</label>
-                  <input id="fname" type="text" required />
-                </div>
-
-                <div>
-                  <label for="lname">Last Name</label>
-                  <input id="lname" type="text" required />
-                </div>
-              </div>
-
-              <label for="email">Email *</label>
-              <input id="email" type="email" required />
-
-              <label for="message">Message</label>
-              <textarea id="message" required></textarea>
-
-              <!-- VERIFICATION CHECK -->
-              <div class="verify-box">
-                <input type="checkbox" id="verifyCheck" required />
-                <label for="verifyCheck">I am not a robot</label>
-              </div>
-
-              <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-
-            <p id="contactStatus" class="status-message"></p>
-          </div>
-
-        </div>
+      <!-- HEADER -->
+      <div class="section-header fade-in">
+        <div class="section-kicker">Contact</div>
+        <h1 class="section-title">Get in Touch</h1>
+        <p class="section-sub">
+          Whether you’re reaching out for collaboration, academic discussions, research inquiries,
+          or consulting — I’d love to hear from you.
+        </p>
       </div>
-    </section>
-  </main>
+
+      <div class="contact-container-upgraded fade-in">
+
+        <!-- LEFT PANEL -->
+        <div class="contact-left card contact-left-upgraded">
+          <h2>Let's Connect</h2>
+          <p class="muted">
+            Feel free to contact me directly or send a message through the form.
+          </p>
+
+          <div class="contact-email-upgraded">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:yemi2favours@yahoo.co.uk">yemi2favours@yahoo.co.uk</a>
+          </div>
+
+          <div class="social-icons-upgraded">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/adeyemi-fagbade" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yemi2favours" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="contact-right card contact-right-upgraded">
+          <form id="contactForm">
+
+            <div class="form-row-upgraded">
+              <div>
+                <label for="fname">First Name</label>
+                <input id="fname" type="text" required />
+              </div>
+
+              <div>
+                <label for="lname">Last Name</label>
+                <input id="lname" type="text" required />
+              </div>
+            </div>
+
+            <label for="email">Email *</label>
+            <input id="email" type="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" required></textarea>
+
+            <!-- Verification -->
+            <div class="verify-box-upgraded">
+              <input type="checkbox" id="verifyCheck" required />
+              <label for="verifyCheck">I am not a robot</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              Send Message
+            </button>
+
+          </form>
+
+          <p id="contactStatus" class="status-message"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
 
   <footer>
     © <span id="year"></span> Dr. Adeyemi Fagbade. All rights reserved.
